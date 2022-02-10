@@ -84,9 +84,11 @@ function startHeartAnimation() {
 				}
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length) {
-					clearInterval(timer);
+				     setTimeout(shouBackground(),3000);
+					
+					// clearInterval(timer);
 				}
-			}, 75);
+			}, 45);
 		});
 		return this;
 	};
@@ -132,16 +134,19 @@ function adjustCodePosition() {
 }
 
 function showLoveU() {
-	$('#loveu').fadeIn(1000,function() {
-	   setTimeout(function () {
-		shouBackground();
-	}, 6000);
-	});
+	$('#loveu').fadeIn(1000);
 }
 
 function shouBackground(){
    $('#content').css("background-image","url('image/we.jpg')");
    $('#content').css("background-repeat","no-repeat");
    $('#content').css("background-position","center");
- // $('#backgroundImg').fadeIn(2000);
+   redirectToStory();
+}
+
+function redirectToStory() {
+   setTimeout(function() {
+      window.location.href='./ourstory/index.html';
+   }, 4000);
+
 }
