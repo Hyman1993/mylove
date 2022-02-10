@@ -147,6 +147,6 @@ function shouBackground(){
 function redirectToStory() {
    setTimeout(function() {
       window.location.href='./ourstory/index.html';
-   }, 4000);
+   }, 3000);
 
 }
