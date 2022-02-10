@@ -85,8 +85,7 @@ function startHeartAnimation() {
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length) {
 				     setTimeout(shouBackground(),3000);
-					
-					// clearInterval(timer);
+					 clearInterval(timer);
 				}
 			}, 45);
 		});
