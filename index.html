@@ -1,10 +1,105 @@
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小黄黄与小郜郜的故事</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon"/>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
 
 </head>
 
 <body>
-<div id="googleMap" style="width:100%;height:100%;">
-my love
+<header id="headerId"></header>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*This is our love story.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">Mr Peng</span><br />
+			Girl name = <span class="keyword">Miss Gao</span><br />
+			<br>
+			<span class="comments">// We first met on May 16, 2021. </span><br />
+			Date date = "2021—05-16"<br />
+			<br>
+			<span class="comments">// As time pass by.</span><br />
+			(time) => { passBy() };<br />
+			<br>
+			<span class="comments">// We fall in love with each other.</span><br />
+			(Peng,Gao) => { fallInLove() }<br />
+			<br>
+			<span class="comments">// Our love story continues.</span><br />
+			(Peng,Gao) => { loveForever() }<br />
+			<br>
+			<br>
+			 "C'est le temps que tu a perdu pour ta rose<br />
+			  qui fait ta rose si importante."<br />
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - 《Le Petit Prince》<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden" ></canvas>
+			<div id="words">
+				<div id="messages">
+				    亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					"If I know what love is,<br/> it is because of you。."<br/>
+					<div class="signature">- 小黄黄 & 小郜郜</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
 </div>
+
+<div id="backgroundImg" style="display:none;">
+	   <img alt="we" src="image/we.jpg">
+</div>
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2021, 5, 16);
+together.setHours(11);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 1000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 100);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
