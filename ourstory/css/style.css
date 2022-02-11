@@ -63,13 +63,13 @@ article p {
 
 
 /** 适配PC端 **/
-@media screen and (min-width: 600px) {
+@media all and (min-device-width: 600px) {
   .grid-wrapper {
     grid-template-columns: 1fr 2fr 2fr;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media all and (min-device-width: 600px) {
   .grid-wrapper {
     display: grid;
     grid-auto-flow: column;
@@ -78,16 +78,30 @@ article p {
 }
 
 /** 适配手机端 **/
-@media screen and (max-width: 599px) {
+@media all and (max-device-width: 599px) {
   .grid-wrapper {
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
   }
 }
 
-@media screen and (max-width: 599px) {
+@media all and (max-device-width: 599px) {
   .grid-wrapper {
     display: grid;
     grid-auto-flow: row;
     grid-gap: 1rem;
   }
+  
+@media all and (max-width: 599px) {
+  .grid-wrapper {
+    grid-template-rows: 1fr 2fr 2fr;
+  }
+}
+
+@media all and (max-width: 599px) {
+  .grid-wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 1rem;
+}
+
 }
