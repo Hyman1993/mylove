@@ -84,6 +84,7 @@ function startHeartAnimation() {
 				}
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length) {
+				     toggleBGM();
 				     setTimeout(shouBackground(),3000);
 					 clearInterval(timer);
 				}
@@ -147,5 +148,17 @@ function redirectToStory() {
    setTimeout(function() {
       window.location.href='./ourstory/index.html';
    }, 3000);
+
+}
+
+// play or stop bgm
+function toggleBGM() {
+      var music = document.getElementById("bgm");  
+      if(music.paused) {
+        music.play();
+      } else {
+      
+        music.pause();
+      }
 
 }
